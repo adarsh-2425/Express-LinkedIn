@@ -17,6 +17,26 @@ app.get('/',(req,res)=>{
     res.json(data);
 });
 
+// GET - download method
+app.get('/download',(req,res)=>{
+    res.download('./images/agile terminology.jpg');
+});
+
+// GET - redirect method
+app.get('/redirect',(req,res)=>{
+    res.redirect("https://www.youtube.com/playlist?list=PLu6GUQnUMikjOxI02-0LyktZcQlhIhHaN");
+});
+
+// GET WITH NEXT
+
+app.get("/next",(req,res,next) => {
+    console.log("The response will be sent by the next function");
+    next();
+},
+(req,res) => {
+    res.send("I just set up a second callback")
+});
+
 
 // POST
 app.post('/create',(req,res)=>{
