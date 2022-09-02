@@ -79,5 +79,5 @@ app.use((err, req, res, next) => {
 
 app.listen(PORT,()=>{
     console.log(`The Server is Running on ${PORT}!`);
-    console.log(data);
+    // console.log(data);
 });
